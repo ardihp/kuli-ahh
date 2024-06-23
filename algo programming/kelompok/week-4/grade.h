@@ -1,7 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
+void removeNumber(char *str)
+{
+    int i, j = 0;
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] < '0' || str[i] > '9')
+        {
+            str[j++] = str[i];
+        }
+    }
+    str[j] = '\0';
+}
+
+void gradeCalculatorApp()
 {
     char student[30], *grade, *desc;
 
@@ -10,78 +23,101 @@ int main()
         int quiz_score, task_score, absent_score, exercise_score, exam_score, average_score;
 
         printf("Masukkan Nama Mahasiswa: ");
-        scanf(" %[^\n]s", student);
+        scanf(" %[^\n]%*c", student);
+
+        removeNumber(student);
 
         printf("===============================\n");
 
         printf("Nilai Quiz: ");
-        scanf(" %d", &quiz_score);
+        while (scanf(" %d", &quiz_score) == 0)
+        {
+            printf("Input hanya menerima angka: ");
+            scanf(" %*s");
+        }
 
-        while (quiz_score > 100)
+        while (quiz_score > 100 || quiz_score == 0)
         {
             printf("Nilai tidak boleh melebihi 100.\n");
 
-            if (quiz_score > 100)
+            if (quiz_score > 100 && quiz_score != 0)
             {
                 printf("Nilai Quiz: ");
-                scanf("%d", &quiz_score);
+                scanf(" %d", &quiz_score);
             }
+            scanf("%*s");
         }
 
         printf("Nilai Tugas: ");
-        scanf(" %d", &task_score);
+        while (scanf(" %d", &task_score) == 0)
+        {
+            printf("Input hanya menerima angka: ");
+            scanf("%*s");
+        }
 
-        while (task_score > 100)
+        while (task_score > 100 || task_score == 0)
         {
             printf("Nilai tidak boleh melebihi 100.\n");
-
-            if (task_score > 100)
+            if (task_score > 100 && task_score != 0)
             {
                 printf("Nilai Tugas: ");
                 scanf("%d", &task_score);
             }
+            scanf("%*s");
         }
 
         printf("Nilai Absen: ");
-        scanf(" %d", &absent_score);
+        while (scanf(" %d", &absent_score) == 0)
+        {
+            printf("Input hanya menerima angka: ");
+            scanf("%*s");
+        }
 
-        while (absent_score > 100)
+        while (absent_score > 100 || absent_score == 0)
         {
             printf("Nilai tidak boleh melebihi 100.\n");
-
-            if (absent_score > 100)
+            if (absent_score > 100 && absent_score != 0)
             {
                 printf("Nilai Absen: ");
                 scanf("%d", &absent_score);
             }
+            scanf("%*s");
         }
 
         printf("Nilai Praktek: ");
-        scanf(" %d", &exercise_score);
+        while (scanf(" %d", &exercise_score) == 0)
+        {
+            printf("Input hanya menerima angka: ");
+            scanf("%*s");
+        }
 
-        while (exercise_score > 100)
+        while (exercise_score > 100 || exercise_score == 0)
         {
             printf("Nilai tidak boleh melebihi 100.\n");
-
-            if (exercise_score > 100)
+            if (exercise_score > 100 && exercise_score != 0)
             {
                 printf("Nilai Praktek: ");
                 scanf("%d", &exercise_score);
             }
+            scanf("%*s");
         }
 
         printf("Nilai UAS: ");
-        scanf(" %d", &exam_score);
+        while (scanf(" %d", &exam_score) == 0)
+        {
+            printf("Input hanya menerima angka: ");
+            scanf("%*s");
+        }
 
-        while (exam_score > 100)
+        while (exam_score > 100 || exam_score == 0)
         {
             printf("Nilai tidak boleh melebihi 100.\n");
-
-            if (exam_score > 100)
+            if (exam_score > 100 && exam_score != 0)
             {
                 printf("Nilai UAS: ");
                 scanf("%d", &exam_score);
             }
+            scanf("%*s");
         }
 
         average_score = (quiz_score + task_score + absent_score + exercise_score + exam_score) / 5;
@@ -116,6 +152,4 @@ int main()
         printf("Nilai rata-rata : %d (%s)\n", average_score, grade);
         printf("Keterangan : Mahasiswa %s %s\n\n", student, desc);
     }
-
-    return 0;
 }

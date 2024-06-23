@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "random": "c",
-    "typeinfo": "c"
+    "typeinfo": "c",
+    "grade.h": "c"
   }
 }
