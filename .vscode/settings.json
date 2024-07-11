@@ -2,6 +2,8 @@
   "files.associations": {
     "random": "c",
     "typeinfo": "c",
-    "grade.h": "c"
-  }
+    "grade.h": "c",
+    "stdio.h": "c"
+  },
+  "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe"
 }
