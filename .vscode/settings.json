@@ -4,6 +4,7 @@
     "typeinfo": "c",
     "grade.h": "c",
     "stdio.h": "c",
+    "employee.c": "cpp",
     "optional": "c",
     "system_error": "c",
     "array": "c",
