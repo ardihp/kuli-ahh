@@ -3,7 +3,14 @@
     "random": "c",
     "typeinfo": "c",
     "grade.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "optional": "c",
+    "system_error": "c",
+    "array": "c",
+    "functional": "c",
+    "tuple": "c",
+    "type_traits": "c",
+    "utility": "c"
   },
   "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe"
 }
